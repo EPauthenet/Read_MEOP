@@ -9,7 +9,7 @@ setwd(path)
 for(t in 1:length(lon)){
   png(paste(t,".png",sep = ""), width=8,height=8, units="in", res=200)  #save figure as a png
   par(mfrow = c(2,2))
-  plot(lon,lat,las = 1,col = 'grey',pch = 20,main = Time[t],typ = 'l'
+  plot(lon,lat,las = 1,col = 'grey',pch = 20,main = Time[t],typ = 'l',asp = 1
     ,xlim = c(min(lon)-2,max(lon)+2), ylim = c(min(lat)-2,max(lat)+2))
   points(lon,lat,pch = 20,col = 'grey',cex = 1)
   points(lon[t],lat[t],pch = 20,col = 2,cex = 1.5)
