@@ -6,8 +6,7 @@ library(oce)
 setwd("path")
 
 #List the name of the ncdf files in the data folder (here France interp)
-data_path = "/Volumes/Seagate_2To/Database/MEOP-CTD_2018-04-10/FRANCE/DATA_ncARGO_interp/"
-#data_path = "MEOP-CTD_2018-04-10/FRANCE/DATA_ncARGO_interp/"
+data_path = "MEOP-CTD_2018-04-10/FRANCE/DATA_ncARGO_interp/"
 lf = list.files(data_path)
 
 #Extract the variables from the n netcdf file
@@ -54,16 +53,4 @@ fields::image.plot(1:dim(Temp)[2],prof,t(Temp),las = 1,col = oce.colorsTemperatu
 fields::image.plot(1:dim(Sal)[2],prof,t(Sal),las = 1,col = oce.colorsSalinity(200)
   ,ylim = c(max(prof),0)
   ,xlab = "# of profiles",ylab = "Depth",main = "Salinity")
-
-
-##################GGPLOT
-library(ggplot2)
-df = data.frame(Pres = c(Pres), Temp = c(Temp), Sal = c(Sal), Ind = rep(1:dim(Pres)[2],each = dim(Pres)[1]))
-
-ggplot() +
-  labs(title = "MEOP temperature profile", subtitle = lf[n]) +
-  xlab("Temperature") + ylab("Depth") + theme_minimal() +
-  geom_path(data = df,aes(x = Temp, y = Pres, group = Ind),size = .5,color = "#00AFBB") + 
-  scale_y_reverse()
-
 
