@@ -1,4 +1,4 @@
-###########Load meop ncdf files, plot maps, profiles and sections - E.Pauthenet April 2020 
+###########Load meop ncdf files - E.Pauthenet April 2020 
 #Data available : https://www.seanoe.org/data/00343/45461/
 library(fields)
 library(ncdf4)
