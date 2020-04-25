@@ -3,7 +3,8 @@
 library(gifski)
 library(gtools)
 
-setwd("path")
+path = "some_empty_folder"
+setwd(path)
 
 for(t in 1:length(lon)){
   png(paste(t,".png",sep = ""), width=8,height=8, units="in", res=200)  #save figure as a png
@@ -31,7 +32,7 @@ for(t in 1:length(lon)){
 }
 
 #Export in a gif
-png_lf = list.files("path", pattern = ".*png$")
+png_lf = list.files(path, pattern = ".*png$")
 png_lf = gtools::mixedsort(sort(png_lf))  #sort in the right order
 gifski::gifski(png_lf, gif_file = "animation.gif", width = 800, height = 800, delay = .2)
 unlink(png_lf)  #Delete the png files
