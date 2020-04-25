@@ -17,9 +17,9 @@ for(t in 1:length(lon)){
   grid()
   #
   TS.ctd = oce::as.ctd(Sal,Temp,Pres)
-  oce::plotTS(TS.ctd,las = 1,typ = 'l',xlab = "Salinity",ylab = "Temperature",col = 'grey')
+  oce::plotTS(TS.ctd,las = 1,typ = 'l',xlab = "Salinity",ylab = "Temperature",col = 'grey',inSitu = T)
   TS.ctd = oce::as.ctd(Sal[,t],Temp[,t],prof)
-  oce::plotTS(TS.ctd,las = 1,typ = 'l',xlab = "Salinity",ylab = "Temperature",col = 2,lwd = 2,add = T)
+  oce::plotTS(TS.ctd,las = 1,typ = 'l',xlab = "Salinity",ylab = "Temperature",col = 2,lwd = 2,add = T,inSitu = T)
   #
   plot(Temp,Pres,las = 1,typ = 'l',ylim = c(max(prof),0),xlim = range(Temp,na.rm = T),xlab = "Salinity",ylab = "Depth",col = 'grey')
   lines(Temp[,t],prof,col = 2,lwd = 2)

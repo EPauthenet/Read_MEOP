@@ -23,7 +23,7 @@ grid()
 
 ####################Plot the profiles in a T-S diagram (oce package)
 TS.ctd = oce::as.ctd(Sal,Temp,Pres)   #Transform the data into a ctd object
-oce::plotTS(TS.ctd,las = 1,typ = 'l',xlab = "Salinity",ylab = "Temperature") #plot the TS diagram, each line is a profile
+oce::plotTS(TS.ctd,las = 1,typ = 'l',xlab = "Salinity",ylab = "Temperature",inSitu = T) #plot the TS diagram, each line is a profile
 
 ####################Plot sections of T and S along number of profile
 X11()                    #open a graphic window large enough
