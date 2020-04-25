@@ -4,4 +4,4 @@ Load and plot ncdf files of temperature and salinity profiles sampled by marine 
 
 The dataset is available on [SEANOE](https://www.seanoe.org/data/00343/45461/)
 
-![Alt Text]("animation.gif")
+![]("animation.gif")
