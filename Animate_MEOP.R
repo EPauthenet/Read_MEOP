@@ -3,8 +3,9 @@
 library(gifski)
 library(gtools)
 
-path = "some_empty_folder"
-setwd(path)
+path1 = "jpg_folder"
+path2 = "animation_folder"
+setwd(path1)
 
 for(t in 1:length(lon)){
   png(paste(path1,t,".png",sep = ""), width=8,height=8, units="in", res=200)
