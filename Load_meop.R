@@ -19,6 +19,6 @@ Temp = ncdf4::ncvar_get( ncid,'TEMP_ADJUSTED')
 Sal = ncdf4::ncvar_get( ncid,'PSAL_ADJUSTED')
 Pres = ncdf4::ncvar_get( ncid,'PRES_ADJUSTED')
 prof = Pres[,1]  #only for the interp ncdf
-Ti = ncdf4::ncvar_get( ncid,'JULD_LOCATION')
-Time = as.Date(Ti, origin=as.Date("1950-01-01")) #Transform time in Date format
+JULD = ncdf4::ncvar_get( ncid,'JULD_LOCATION')
+Time = lubridate::ymd_hms("1950-01-01 00:00:00") + JULD * 3600 * 24
 ncdf4::nc_close(ncid)
